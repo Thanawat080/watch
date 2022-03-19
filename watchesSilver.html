@@ -1,0 +1,926 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@200&family=NTR&family=Stoke:wght@300&display=swap"
+        rel="stylesheet">
+    <script src="watchesSilver_js.js"></script>
+    <style>
+        /* style cart */
+        @font-face {
+        font-family:Cloud-B;
+        src: url(font/Cloud-Bold.otf);
+        }
+        @font-face {
+        font-family:Cloud-L;
+        src: url(font/Cloud-Light.otf);
+        }
+        *{
+            font-family: Cloud-L;
+        }
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            right: 0;
+            background-color: white;
+            overflow-x: hidden;
+            transition: 0.2s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: -10px;
+            right: 25px;
+            font-size: 46px;
+            margin-right: 83%;
+        }
+
+        .btnconshop {
+            background-color: rgb(0, 8, 28);
+            color: rgb(205, 188, 122);
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(0, 8, 28);
+            width: 63%;
+            margin-left: 18%;
+            padding: 14px;
+            letter-spacing: 2.4px;
+            font-size: 13px;
+            border-radius: 2px;
+        }
+
+        .btnconshop:hover {
+            background-color: rgb(39, 55, 81);
+            border-color: rgb(39, 55, 81);
+            transition: 0.15s;
+        }
+
+        /* style cart */
+        .social {
+            text-decoration: none !important;
+        }
+
+        .hvr-float {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            -webkit-transition-duration: 0.2s;
+            background-color: rgba(255, 255, 255, 0.8);
+            transition-duration: 0.2s;
+            transition: 0.2s ease 0s;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+
+        }
+
+        .hvr-float:hover,
+        .hvr-float:focus,
+        .hvr-float:active {
+            -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.8);
+            border-color: rgba(255, 255, 255, 0.8);
+            transition: 0.1s ease 0s;
+        }
+
+        .easy1 {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none !important;
+
+
+            display: inline-block;
+
+            position: relative;
+        }
+
+        .easy1:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 15;
+            content: "";
+            display: block;
+            height: 1px;
+            left: 50%;
+            position: absolute;
+            background: black;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+
+        .easy1:hover:after {
+            width: 90%;
+            left: 8;
+        }
+
+        .easy {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none !important;
+
+
+            display: inline-block;
+
+            position: relative;
+        }
+
+        .easy:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 15;
+            content: "";
+            display: block;
+            height: 1px;
+            left: 50%;
+            position: absolute;
+            background: whitesmoke;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+
+        .easy:hover:after {
+            width: 90%;
+            left: 8;
+        }
+
+        #box5:hover {
+            box-shadow: 0px 3px 12px 0px #c0c2c3;
+            transition: 0.2s;
+        }
+
+        body {
+            font-family: Cloud !important;
+            src: url('Cloud Font License.txt') !important;
+        }
+
+        .test {
+            position: absolute;
+            top: 0;
+            z-index: 3;
+
+        }
+
+        .dropdown-toggle::after {
+            display: none;
+        }
+
+        .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+
+        .navbar-custom .navbar-nav .nav-link {
+            color: black;
+            padding: 1rem 1rem;
+        }
+
+
+        #nav_on_scroll {
+            min-width: height 70px;
+
+        }
+
+        #nav_start {
+            min-width: height 40px;
+
+        }
+
+        .headerfixed {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 10;
+        }
+
+        .btn-circle.btn-md {
+            width: 23px;
+            height: 23px;
+            padding: 6px 0px;
+            border-radius: 15px;
+            font-size: 8px;
+            text-align: center;
+            margin-top: -20px;
+
+            margin-right: 10px;
+        }
+
+        .btn-circle.btn-sm {
+            width: 30px;
+            height: 30px;
+            padding: 6px 0px;
+            border-radius: 15px;
+            font-size: 8px;
+            text-align: center;
+        }
+
+        .help {
+            position: fixed;
+            bottom: 15;
+            left: 10;
+            background-color: black;
+            width: 180px;
+            height: 48px;
+            border-radius: 30px;
+
+
+        }
+
+        .texthelp {
+            width: 20px;
+        }
+    </style>
+</head>
+
+<body onload="myFunction();">
+    <!-- cart slidNav -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <p style="font-size: 21px; letter-spacing: 4px; text-align: center; margin-top: -9%;">ตะกร้าสินค้าของคุณ</p>
+        <a href="javascript:void(0)" onclick="closeNav()"><svg width="30" height="30" viewBox="0 0 24 22"
+                style="margin-top: -13.5%; margin-left: 89%">
+                <use herf="#icon-cart-1" xlink:href="#icon-cart-1">
+                    <path id="icon-cart-1" fill="black"
+                        d="m 8.375 18 c 1.13909 0 2.0625 0.923413 2.0625 2.0625 s -0.923413 2.0625 -2.0625 2.0625 s -2.0625 -0.923413 -2.0625 -2.0625 s 0.923413 -2.0625 2.0625 -2.0625 Z m 9.75 0 c 1.13909 0 2.0625 0.923413 2.0625 2.0625 s -0.923413 2.0625 -2.0625 2.0625 s -2.0625 -0.923413 -2.0625 -2.0625 s 0.923413 -2.0625 2.0625 -2.0625 Z m -9.75 1.125 c -0.517767 0 -0.9375 0.419733 -0.9375 0.9375 s 0.419733 0.9375 0.9375 0.9375 s 0.9375 -0.419733 0.9375 -0.9375 s -0.419733 -0.9375 -0.9375 -0.9375 Z m 9.75 0 c -0.517767 0 -0.9375 0.419733 -0.9375 0.9375 s 0.419733 0.9375 0.9375 0.9375 s 0.9375 -0.419733 0.9375 -0.9375 s -0.419733 -0.9375 -0.9375 -0.9375 Z m -13.4358 -17.625 l 1.5 6 h 17.5912 l -3.375 10.125 h -12.8446 l -3.75 -15 h -3.31081 v -1.125 Z m 17.5304 7.125 h -15.7491 l 1.96875 7.875 h 11.1554 Z">
+                    </path>
+                </use>
+            </svg></a>
+        <hr style="margin-top: -10px;">
+        <br>
+        <p style="font-size: 12px;
+        letter-spacing: 2.4px;
+        text-transform: uppercase; text-align: center;">You have no items in your shopping cart.</p>
+        <button class="btnconshop" onclick="closeNav()" href="javascript:void(0)">ช็อปปิ้งต่อ</button>
+    </div>
+    <!-- cart slidNav -->
+    <!-- HELP -->
+    <button type="button" class="btn btn-secondary btn-lg help" style="z-index: 100;">
+        <svg x="0" y="0" viewBox="0 0 15 16" class="texthelp" fill="white">
+            <path
+                d="M1.3,16c-0.7,0-1.1-0.3-1.2-0.8c-0.3-0.8,0.5-1.3,0.8-1.5c0.6-0.4,0.9-0.7,1-1c0-0.2-0.1-0.4-0.3-0.7c0,0,0-0.1-0.1-0.1 C0.5,10.6,0,9,0,7.4C0,3.3,3.4,0,7.5,0C11.6,0,15,3.3,15,7.4s-3.4,7.4-7.5,7.4c-0.5,0-1-0.1-1.5-0.2C3.4,15.9,1.5,16,1.5,16 C1.4,16,1.4,16,1.3,16z M3.3,10.9c0.5,0.7,0.7,1.5,0.6,2.2c0,0.1-0.1,0.3-0.1,0.4c0.5-0.2,1-0.4,1.6-0.7c0.2-0.1,0.4-0.2,0.6-0.1 c0,0,0.1,0,0.1,0c0.4,0.1,0.9,0.2,1.4,0.2c3,0,5.5-2.4,5.5-5.4S10.5,2,7.5,2C4.5,2,2,4.4,2,7.4c0,1.2,0.4,2.4,1.2,3.3 C3.2,10.8,3.3,10.8,3.3,10.9z">
+
+            </path>
+
+        </svg>
+
+        <label style="margin-left: 10px; font-size: 17px;">HELP</label>
+    </button>
+    <!-- HELP -->
+
+    <nav class="navbar navbar-expand-sm fixed-top py-2"
+        style="visibility: hidden ; background-color: rgba(0, 14, 34, 0.9);" id="nav_on_scroll">
+        <a href="index.html">
+            <svg width="50" height="50" viewBox="0 0 32 32">
+                <use herf="#icon-logo-scroll" xlink:href="#icon-logo-scroll">
+                    <path id="icon-logo-scroll" fill="White"
+                        d="M 31.5 9.563 v 0.313 c -0.313 0 -0.563 0.063 -0.75 0.25 c -0.25 0.125 -0.438 0.313 -0.625 0.625 c -0.125 0.25 -0.313 0.75 -0.563 1.563 l -3.5 10.188 h -0.375 l -2.875 -8.063 l -2.875 8.063 h -0.313 l -3.813 -10.5 c -0.25 -0.813 -0.438 -1.25 -0.5 -1.375 c -0.125 -0.25 -0.313 -0.438 -0.5 -0.5 c -0.25 -0.188 -0.563 -0.188 -0.875 -0.188 v -0.375 h 4.625 v 0.313 h -0.188 c -0.313 0 -0.563 0.063 -0.75 0.25 s -0.25 0.313 -0.25 0.563 c 0 0.188 0.125 0.688 0.375 1.5 l 2.563 7 l 2.063 -6 l -0.375 -1.063 l -0.313 -0.875 a 3.345 3.345 0 0 0 -0.438 -0.813 c -0.125 -0.125 -0.188 -0.188 -0.313 -0.25 a 1.92 1.92 0 0 0 -0.438 -0.313 c -0.125 0 -0.313 -0.063 -0.563 -0.063 V 9.5 h 4.938 v 0.375 h -0.313 c -0.375 0 -0.625 0.063 -0.813 0.25 a 0.793 0.793 0 0 0 -0.25 0.563 c 0 0.313 0.125 0.875 0.438 1.688 l 2.438 6.813 l 2.375 -6.938 c 0.25 -0.75 0.438 -1.313 0.438 -1.563 a 1.17 1.17 0 0 0 -0.125 -0.438 c -0.125 -0.125 -0.188 -0.188 -0.375 -0.25 c -0.188 -0.125 -0.5 -0.125 -0.938 -0.125 v -0.313 Z M 7.563 22.188 c -2.5 0 -4.313 -0.688 -5.5 -2 C 1 19 0.5 17.5 0.5 15.75 c 0 -1.313 0.25 -2.438 0.875 -3.438 s 1.438 -1.75 2.375 -2.125 c 1 -0.438 2.438 -0.688 4.313 -0.688 h 5.063 v 0.375 h -0.438 c -0.5 0 -0.875 0.125 -1.125 0.438 c -0.188 0.188 -0.25 0.688 -0.25 1.438 v 8.125 c 0 0.688 0.063 1.188 0.188 1.375 c 0.25 0.375 0.625 0.5 1.125 0.5 h 0.5 v 0.375 Z m 2 -11.625 c -0.688 -0.188 -1.313 -0.313 -1.875 -0.313 c -1.5 0 -2.688 0.5 -3.625 1.5 c -1 1 -1.5 2.375 -1.5 4.125 S 3.063 19 4.063 20 c 0.938 1 2.125 1.5 3.563 1.5 c 0.563 0 1.188 -0.125 2 -0.25 V 10.562 Z">
+                    </path>
+                </use>
+            </svg>
+        </a>
+        <div class="container">
+            <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                <ul class="navbar-nav mx-md-auto">
+                    <li class="nav-item dropdown">
+                        <a class="easy" href="watches.html" id="navbarDropdownMenuLink"
+                            style="color: white; padding: 15px; font-size: smaller;">
+                            น า ฬิ ก า
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="watches.html">นาฬิกาทั้งหมด</a>
+                            <a class="dropdown-item" href="watcheswoman.html">นาฬิกาสำหรับสุภาพสตรี</a>
+                            <a class="dropdown-item" href="watches_Man.html">นาฬิกาสำหรับสุภาพบุรุษ</a>
+                            <a class="dropdown-item" href="watchesrosegold.html">นาฬิกาสีโรสโกลด์</a>
+                            <a class="dropdown-item" href="watchesSilver.html">นาฬิกาสีเงิน</a>
+                            <a class="dropdown-item" href="watches_Gold.html">นาฬิกาสีทอง</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="easy" href="jewelryall_html.html" id="navbarDropdownMenuLink"
+                            style="color: white; padding: 15px; font-size: smaller; ">
+                            เ ค รื่ อ ง ป ร ะ ดั บ
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="jewelryall_html.html">เครื่องประดับทั้งหมด</a>
+                            <a class="dropdown-item" href="jewelryring_html.html">แหวน</a>
+                            <a class="dropdown-item" href="jewelryBracelet_html.html">กำไลข้อมือ</a>
+                            <a class="dropdown-item" href="jewelryearring_html.html">ต่างหู</a>
+                            <a class="dropdown-item" href="jewelryNecklace_html.html">สร้อยคอ</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="easy" href="watchstraps.html" id="navbarDropdownMenuLink"
+                            style="color: white; padding: 15px; font-size: smaller;">
+                            ส า ย น า ฬิ ก า
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="watchstraps.html">สายนาฬิกา</a>
+                            <a class="dropdown-item" href="petite_strap.html">Petite Watch Straps</a>
+                            <a class="dropdown-item" href="classic_strap.html">Classic Watch Straps</a>
+                            <a class="dropdown-item" href="Howchangeswatchstrap.html">วิธีการเปลี่ยนสายนาฬิกา</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="easy" href="srollhtml.html" id="navbarDropdownMenuLink"
+                            style="color: white; padding: 15px; font-size: smaller;">
+                            ค อ ล เ ล ค ชั่ น
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="srollhtml.html">คอลเลคชั่นทั้งหมด</a>
+                            <a class="dropdown-item" href="collection.html">Iconic Link</a>
+                            <a class="dropdown-item" href="petiteC.html">Petite</a>
+                            <a class="dropdown-item" href="classicC.html">Classic</a>
+                            <a class="dropdown-item" href="elanC.html">Elan</a>
+                            <a class="dropdown-item" href="asp.html">Aspirtion</a>
+                            <a class="dropdown-item" href="emalie.html">Emalie</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="easy" href="#" id="navbarDropdownMenuLink"
+                            style="color: white; padding: 15px; font-size: smaller;">
+                            ชุ ด เ ซ็ ท ข อ ง ข วั ญ
+                        </a>
+                        
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="easy" href="#" id="navbarDropdownMenuLink"
+                            style="color: white; padding: 15px; font-size: 70%; margin-top: 3px; ">
+                            S H O P I N S T A G R A M
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">สุภาพสตรี</a>
+                            <a class="dropdown-item" href="#">สุภาพบุรุษ</a>
+                            <a class="dropdown-item" href="#">ชมทั้งหมด</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a onclick="openNav()">
+        <svg width="30" height="30" viewBox="0 0 24 22" style="float: right;">
+            <use herf="#icon-cart" xlink:href="#icon-cart">
+                <path id="icon-cart" fill="White"
+                    d="m 8.375 18 c 1.13909 0 2.0625 0.923413 2.0625 2.0625 s -0.923413 2.0625 -2.0625 2.0625 s -2.0625 -0.923413 -2.0625 -2.0625 s 0.923413 -2.0625 2.0625 -2.0625 Z m 9.75 0 c 1.13909 0 2.0625 0.923413 2.0625 2.0625 s -0.923413 2.0625 -2.0625 2.0625 s -2.0625 -0.923413 -2.0625 -2.0625 s 0.923413 -2.0625 2.0625 -2.0625 Z m -9.75 1.125 c -0.517767 0 -0.9375 0.419733 -0.9375 0.9375 s 0.419733 0.9375 0.9375 0.9375 s 0.9375 -0.419733 0.9375 -0.9375 s -0.419733 -0.9375 -0.9375 -0.9375 Z m 9.75 0 c -0.517767 0 -0.9375 0.419733 -0.9375 0.9375 s 0.419733 0.9375 0.9375 0.9375 s 0.9375 -0.419733 0.9375 -0.9375 s -0.419733 -0.9375 -0.9375 -0.9375 Z m -13.4358 -17.625 l 1.5 6 h 17.5912 l -3.375 10.125 h -12.8446 l -3.75 -15 h -3.31081 v -1.125 Z m 17.5304 7.125 h -15.7491 l 1.96875 7.875 h 11.1554 Z">
+                </path>
+            </use>
+        </svg>
+        </a>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+
+    <div class="headerfixed">
+        <div class="header py-4" style="background-color: rgba(0, 8, 28, 0.5);">
+            <div>
+                <div class="row">
+                    <div class="col-2" style="color:white;">
+                        &nbsp;&nbsp;&nbsp;&nbsp; <svg viewBox="0 0 32 32" width="16" height="16">
+                            <use href="#icon-language" xlink:href="#icon-language">
+                                <path
+                                    d="M16 0C7.2 0 0 7.2 0 16s7.2 16 16 16 16-7.2 16-16S24.8 0 16 0zm13.091 10.255h-5.018c-.727-3.273-1.891-5.964-3.491-7.782a14.287 14.287 0 0 1 8.509 7.782zM30.327 16c0 1.382-.218 2.691-.582 4h-5.382c.145-1.309.218-2.618.218-4s-.073-2.764-.218-4h5.382c.364 1.236.582 2.618.582 4zm-28.654-.073c0-1.309.218-2.691.582-3.927h5.382c-.145 1.236-.218 2.618-.218 4s.073 2.691.218 4H2.255c-.364-1.309-.582-2.691-.582-4.073zm7.418 0c0-1.309.145-2.691.291-3.927h5.745v8H9.382c-.145-1.309-.291-2.691-.291-4.073zm7.782-14.182c2.4.655 4.436 4 5.455 8.509h-5.455zm-1.746 0v8.509H9.672c1.018-4.436 3.055-7.782 5.455-8.509zm0 19.928v8.509c-2.4-.655-4.436-4-5.455-8.509zm1.746 8.509v-8.509h5.455c-1.018 4.509-3.055 7.855-5.455 8.509zm0-10.182v-8h5.745c.145 1.236.291 2.618.291 4s-.145 2.691-.291 4zM11.418 2.473c-1.6 1.818-2.836 4.509-3.491 7.782H2.909a14.293 14.293 0 0 1 8.509-7.782zm-8.509 19.2h5.018c.655 3.273 1.818 6.036 3.345 7.855-3.709-1.309-6.764-4.145-8.364-7.855zm17.746 7.854c1.6-1.818 2.764-4.582 3.418-7.855h5.018a14.269 14.269 0 0 1-8.436 7.855z"
+                                    fill="currentColor" id="icon-language"></path>
+                            </use>
+                        </svg>&nbsp;&nbsp;<b style="font-size: 12px;">Thailand</b>
+                    </div>
+                    <div class="col text-center"  style="margin-left: -250px;">
+                        <a href="index.html">
+                            <svg width="700" height="20" viewBox="0 0 300 20" style="margin-top: 5px;">
+                                <use herf="#icon-logo-brand" xlink:href="#icon-logo-brand">
+                                    <path id="icon-logo-brand" fill="White"
+                                        d="M3.849 15.859h3.236c3.334 0 5.687-2.55 5.687-5.884 0-3.333-2.255-5.883-5.687-5.883H3.8V15.86h.049zm2.304-9.757h.393c2.598 0 3.922 1.324 3.922 3.873 0 2.305-1.079 3.874-3.922 3.874h-.393V6.102zm21.916 7.305l.882 2.5h2.451l-4.461-12.06h-1.765l-4.56 12.06h2.403l.98-2.5h4.07zm-.638-1.863h-2.794L25.91 7.28h.05l1.47 4.265zm13.385 4.315h2.304V7.916h.05l6.177 8.237h1.666V4.141H48.71v7.894h-.049l-6.177-8.237h-1.667v12.06zM64.546 4.14H62.24v11.767h2.304V4.14zM82.44 6.102v-2.01h-6.08V15.86h6.08v-2.01h-3.775v-3.187h3.628v-2.01h-3.628v-2.6h3.775v.05zm13.973-1.96h-2.304v11.766h5.54v-2.01h-3.236V4.14zm24.66 0h-2.402l3.727 12.011h1.666l2.207-7.697h.049l2.353 7.697h1.667l3.971-12.012h-2.402l-2.304 7.992h-.05l-2.45-8.188h-1.374l-2.353 8.188h-.049l-2.255-7.992zm28.143 1.96v-2.01h-6.08V15.86h6.08v-2.01h-3.776v-3.187h3.628v-2.01h-3.628v-2.6h3.776v.05zm13.482-1.96h-2.304v11.766h5.54v-2.01h-3.236V4.14zm15.885 0h-2.304v11.766h5.54v-2.01h-3.236V4.14zm16.915 0h-2.305v11.766h2.305V4.14zm12.305 11.717h2.305V7.916h.049l6.177 8.237h1.667V4.141h-2.304v7.894h-.05l-6.177-8.237h-1.667v12.06zm26.28-6.227v1.863h2.5c-.05 1.422-1.226 2.648-2.697 2.648-2.206 0-3.334-2.157-3.334-4.118 0-1.962 1.079-4.217 3.285-4.217 1.226 0 2.206.834 2.697 1.863l2.01-1.078c-.883-1.814-2.648-2.795-4.658-2.795-3.53 0-5.736 2.893-5.736 6.227 0 3.235 2.157 6.128 5.589 6.128 3.628 0 5.344-2.942 5.344-6.276v-.294h-5v.05zm19.66-3.53h2.352v-2.01h-7.01v2.01h2.353v9.757h2.304V6.102zm17.159 10.1c3.432 0 5.834-2.844 5.834-6.227 0-3.284-2.402-6.177-5.834-6.177s-5.834 2.893-5.834 6.177c0 3.383 2.402 6.227 5.834 6.227zm0-10.149c2.01 0 3.432 1.912 3.432 3.824 0 1.765-1.52 4.02-3.432 4.02-1.961 0-3.432-2.255-3.432-4.02-.05-1.863 1.422-3.824 3.432-3.824zm15.1 9.806h2.305V7.916h.049l6.177 8.237h1.667V4.141h-2.304v7.894h-.05l-6.177-8.237h-1.667v12.06z">
+                                    </path>
+                                </use>
+                            </svg>
+                        </a>
+                    </div>
+                    <a onclick="openNav()">
+                    <div class="col-2" style="margin-right: 2%;">
+                        <svg width="30" height="30" viewBox="0 0 24 22" style="float: right;">
+                            <use herf="#icon-cart1" xlink:href="#icon-cart1">
+                                <path id="icon-cart1" fill="white"
+                                    d="m 8.375 18 c 1.13909 0 2.0625 0.923413 2.0625 2.0625 s -0.923413 2.0625 -2.0625 2.0625 s -2.0625 -0.923413 -2.0625 -2.0625 s 0.923413 -2.0625 2.0625 -2.0625 Z m 9.75 0 c 1.13909 0 2.0625 0.923413 2.0625 2.0625 s -0.923413 2.0625 -2.0625 2.0625 s -2.0625 -0.923413 -2.0625 -2.0625 s 0.923413 -2.0625 2.0625 -2.0625 Z m -9.75 1.125 c -0.517767 0 -0.9375 0.419733 -0.9375 0.9375 s 0.419733 0.9375 0.9375 0.9375 s 0.9375 -0.419733 0.9375 -0.9375 s -0.419733 -0.9375 -0.9375 -0.9375 Z m 9.75 0 c -0.517767 0 -0.9375 0.419733 -0.9375 0.9375 s 0.419733 0.9375 0.9375 0.9375 s 0.9375 -0.419733 0.9375 -0.9375 s -0.419733 -0.9375 -0.9375 -0.9375 Z m -13.4358 -17.625 l 1.5 6 h 17.5912 l -3.375 10.125 h -12.8446 l -3.75 -15 h -3.31081 v -1.125 Z m 17.5304 7.125 h -15.7491 l 1.96875 7.875 h 11.1554 Z">
+                                </path>
+                            </use>
+                        </svg>
+                    </div>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-sm py-0 navbar-custom" id="nav_start"
+            style="background-color:  rgba(0, 8, 28, 0.65);">
+            <div class="container">
+                <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                    <ul class="navbar-nav mx-md-auto">
+                        <li class="nav-item dropdown">
+                            <a class="easy" href="watches.html" id="navbarDropdownMenuLink"
+                                style="color: white; padding: 15px; font-size: smaller;">
+                                น า ฬิ ก า
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="watches.html">นาฬิกาทั้งหมด</a>
+                                <a class="dropdown-item" href="watcheswoman.html">นาฬิกาสำหรับสุภาพสตรี</a>
+                                <a class="dropdown-item" href="watches_Man.html">นาฬิกาสำหรับสุภาพบุรุษ</a>
+                                <a class="dropdown-item" href="watchesrosegold.html">นาฬิกาสีโรสโกลด์</a>
+                                <a class="dropdown-item" href="watchesSilver.html">นาฬิกาสีเงิน</a>
+                                <a class="dropdown-item" href="watches_Gold.html">นาฬิกาสีทอง</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="easy" href="jewelryall_html.html" id="navbarDropdownMenuLink"
+                                style="color: white; padding: 15px; font-size: smaller; ">
+                                เ ค รื่ อ ง ป ร ะ ดั บ
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="jewelryall_html.html">เครื่องประดับทั้งหมด</a>
+                                <a class="dropdown-item" href="jewelryring_html.html">แหวน</a>
+                                <a class="dropdown-item" href="jewelryBracelet_html.html">กำไลข้อมือ</a>
+                                <a class="dropdown-item" href="jewelryearring_html.html">ต่างหู</a>
+                                <a class="dropdown-item" href="jewelryNecklace_html.html">สร้อยคอ</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="easy" href="watchstraps.html" id="navbarDropdownMenuLink"
+                                style="color: white; padding: 15px; font-size: smaller;">
+                                ส า ย น า ฬิ ก า
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="watchstraps.html">สายนาฬิกา</a>
+                                <a class="dropdown-item" href="petite_strap.html">Petite Watch Straps</a>
+                                <a class="dropdown-item" href="classic_strap.html">Classic Watch Straps</a>
+                                <a class="dropdown-item" href="Howchangeswatchstrap.html">วิธีการเปลี่ยนสายนาฬิกา</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="easy" href="srollhtml.html" id="navbarDropdownMenuLink"
+                                style="color: white; padding: 15px; font-size: smaller;">
+                                ค อ ล เ ล ค ชั่ น
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="srollhtml.html">คอลเลคชั่นทั้งหมด</a>
+                                <a class="dropdown-item" href="collection.html">Iconic Link</a>
+                                <a class="dropdown-item" href="petiteC.html">Petite</a>
+                                <a class="dropdown-item" href="classicC.html">Classic</a>
+                                <a class="dropdown-item" href="elanC.html">Elan</a>
+                                <a class="dropdown-item" href="asp.html">Aspirtion</a>
+                                <a class="dropdown-item" href="emalie.html">Emalie</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="easy" href="#" id="navbarDropdownMenuLink"
+                                style="color: white; padding: 15px; font-size: smaller;">
+                                ชุ ด เ ซ็ ท ข อ ง ข วั ญ
+                            </a>
+                            
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="easy" href="#" id="navbarDropdownMenuLink"
+                                style="color: white; padding: 15px; font-size: 70%; margin-top: 3px; ">
+                                S H O P I N S T A G R A M
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">สุภาพสตรี</a>
+                                <a class="dropdown-item" href="#">สุภาพบุรุษ</a>
+                                <a class="dropdown-item" href="#">ชมทั้งหมด</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="test">
+        <a href="#">
+            <picture class="pic">
+                <source
+                    srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/1ga35bwOVOHsVNfeUwrRAK/2055de890612ae95d057952b0ecf0c3a/silver_watches_UGC_hero_2800x850.jpg"
+                    sizes="100vw" media="(max-width: 960px)"
+                    data-srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/1ga35bwOVOHsVNfeUwrRAK/2055de890612ae95d057952b0ecf0c3a/silver_watches_UGC_hero_2800x850.jpg">
+                <source
+                    srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/1ga35bwOVOHsVNfeUwrRAK/2055de890612ae95d057952b0ecf0c3a/silver_watches_UGC_hero_2800x850.jpg"
+                    sizes="100vw" media="(min-width: 961px)">
+                <img src="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/1ga35bwOVOHsVNfeUwrRAK/2055de890612ae95d057952b0ecf0c3a/silver_watches_UGC_hero_2800x850.jpg"
+                    alt title style="width: 100%;"
+                    data-src="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/1ga35bwOVOHsVNfeUwrRAK/2055de890612ae95d057952b0ecf0c3a/silver_watches_UGC_hero_2800x850.jpg">
+            </picture>
+        </a>
+        <div class="row" style="background-color: rgb(244, 244, 244); height: 60px;">
+            <div class="container">
+                <div class="row" style="height: 60px; padding: 5px; margin-left: 1%;">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-2" style="padding: 0%;">
+                                <svg width="50" height="50" viewBox="0 0 32 32" style="float: left;">
+                                    <use herf="#icon-plane" xlink:href="#icon-plane">
+                                        <path id="icon-plane" fill="Black"
+                                            d="M30.9 16.2c-.1.1-.3.2-.5.3-3.3.4-6.7.7-10 .8-.1 0-.2.1-.2.1l-3.9 3.7c-.2.2-.6.3-.9.2-.3-.1-.6-.4-.6-.7v-3.1c0-.1-.1-.3-.4-.3-2.4-.2-4.8-.4-7.2-.8-.2 0-.4-.1-.5-.2-.2-.1-.2-.3-.2-.5.1-.3.3-.6.7-.5l1-.2c.2 0 .3-.1.3-.3v-2.2c0-.1.2-.2.2-.2h.1c.1 0 .2 0 .2.1l2.2 2.1c.1.1.2.1.3.1L22 13c3.5-.5 6.4.3 8.8 2.3.3.2.3.5.1.9zM15 11.4c0-.3.2-.5.5-.7.3-.1.6-.1.9.2l2.1 1.9-3.5.5v-1.9zm16.3 3.4c-2.6-2.2-5.6-3.1-9.4-2.5l-2.8.4-.1-.1-2.2-2c-.3-.3-.8-.4-1.2-.4h-7c-.1 0-.2.1-.2.2s.1.2.2.2h6.1c-.3.2-.5.6-.5 1v1.9l-2.7.4L9.4 12c-.3-.4-.7-.4-1-.3-.4 0-.7.3-.7.8v1.8l-.7.1c-.7.1-1.2.6-1.2 1.1-.1.4.1.7.3 1 .3.3.6.4 1 .4 2.2.4 4.6.6 6.9.8v2.7c0 .5.2.9.6 1.1H8.5c-.1 0-.2.1-.2.1 0 .1.1.2.2.2h7.2c.4 0 .9-.2 1.1-.5l3.8-3.6c3.3-.1 6.7-.3 9.9-.9.4-.1.7-.2.9-.5.5-.4.4-1.1-.1-1.5zM19 17.4c-1.2 0-2.5-.1-3.3-.1-.1 0-.2.1-.2.1 0 .1 0 .2.1.2.9.1 2.1.1 3.3.1.1 0 .2-.1.2-.2.1 0 0-.1-.1-.1m10.8-2c-8.6 1.6-21.1.2-21.3.1-.1 0-.2.1-.2.2s0 .2.1.2 5.3.7 11.3.7c3.4 0 7-.2 10.1-.8.1 0 .1-.1.1-.2.1-.1 0-.3-.1-.2M6 10.4h1.6c.2 0 .2-.1.2-.1 0-.1-.1-.2-.1-.2H6c-.1 0-.2.1-.2.1 0 .1.1.2.2.2m-1.5 0h.7s.1-.1.1-.2-.1-.2-.2-.2h-.6c-.1 0-.2.1-.2.2 0 .2 0 .2.2.2m3.2 11.2H6.1c-.1 0-.2.1-.2.2s.1.2.2.2h1.6c.1 0 .2-.1.2-.2s-.1-.2-.2-.2m-2.6 0h-.6c-.1 0-.2.1-.2.2s.1.2.2.2h.7c.1 0 .2-.1.2-.2-.1-.1-.3-.2-.3-.2">
+                                        </path>
+                                    </use>
+                                </svg>
+                            </div>
+                            <div class="col" style=" padding: 13px; ">
+                                <p style=" font-size: 70%; float: left;">ฟรีค่าจัดส่งเมื่อซื้อสินค้ามูลค่า 2,000
+                                    บาทขึ้นไป
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col" style="margin-left: 4%;">
+                        <div class="row">
+                            <div class="col-2" style="padding: 0%; margin-top: 13px;">
+                                <svg width="100%" height="25" viewBox="0 0 32 32" style="float: left;">
+                                    <use herf="#icon-box" xlink:href="#icon-box">
+                                        <path id="icon-box" fill="Black"
+                                            d="M18.7 27.8H6.9c-.6 0-.9-.1-1.3-.6-.1-.3-.1-.5-.1-.8V10.5c0-.3 0-.5.3-.7l5.4-5.4c.2-.3.5-.3.8-.3h13.6c.4 0 .7 0 .9.4l5.3 5.3c.2.2.2.5.2.8v15.9c0 .7-.5 1.3-1.3 1.3h-12zm0-1.4h11.4c.5 0 .5 0 .5-.5V11.6c0-.5 0-.5-.5-.5h-6.6c-.3 0-.4 0-.4.5v2.5c0 .4-.2.6-.6.7-1.9.4-3.7.8-5.6 1.2-.6.2-1.3.3-2 .4-.4.1-.7-.1-.8-.6v-4.1c0-.6.1-.5-.5-.5H7.4c-.5 0-.5 0-.5.5v14.5c0 .3.1.4.3.4h.4c3.7-.2 7.4-.2 11.1-.2zm0-15.3h-2.9c-.5 0-.5 0-.5.5v3.3c0 .4 0 .4.5.3.1 0 .3 0 .5-.1.8-.1 1.7-.3 2.5-.5 1.1-.2 2.1-.4 3.2-.6.2-.1.2-.2.2-.4v-2c0-.4 0-.4-.4-.4-1-.1-2-.1-3.1-.1zm7.4-1.4h3.1c.2 0 .2-.1.1-.3 0-.1-.1-.1-.2-.1C28 8.1 26.9 7 25.7 5.8c-.1-.1-.3-.2-.5-.2H22c-.3 0-.3.1-.2.2.4 1.2.8 2.3 1.1 3.5.1.3.2.4.5.3.9 0 1.7.1 2.7.1zm-14.8 0h2.9c.3 0 .5-.1.5-.4.3-1 .6-2.2 1.1-3.3 0-.2 0-.3-.3-.3h-2.1c-.5 0-1-.2-1.3.1-.3.1-.7.6-.9.8L8.5 9.3c-.1 0-.2.1-.2.3.1.2.2.1.4.1h2.6zm7.4 0h3c.3 0 .3 0 .2-.4-.3-1.1-.7-2.3-1-3.4-.1-.2-.3-.3-.5-.3h-3.2c-.2 0-.4.1-.5.3-.3 1.1-.7 2.3-1 3.4-.1.3-.1.4.2.4.9-.1 1.9 0 2.8 0zm4.5 15h-5c-.6 0-.8-.2-.8-.8v-6.5c0-.6.2-.7.8-.7h9.9c.6 0 .8.1.8.7v6.5c0 .6-.2.8-.8.8h-4.9zm-.1-1h4.4c.5 0 .5 0 .5-.4v-5.2c0-.3 0-.3-.4-.3h-8.7c-.3 0-.3 0-.3.4v5.1c0 .5 0 .5.4.5 1.3-.1 2.7-.1 4.1-.1zm.7-2.5h-1.9c0 .1.1.2.1.2.2.2.5.5.8.7.2.3.2.5 0 .6-.1.2-.4.2-.6 0L20.5 21c-.2-.1-.2-.4 0-.6.5-.6 1.1-1.2 1.7-1.8.2-.2.5-.2.6 0 .2.2.2.4 0 .7-.3.3-.6.5-.8.8-.1.1-.1.1-.1.2h3.7c.3 0 .5.1.5.4 0 .2-.2.4-.5.4-.7.1-1.2.1-1.8.1z">
+                                        </path>
+                                    </use>
+                                </svg>
+                            </div>
+                            <div class="col" style=" margin-top: 8px;">
+                                <p style="font-size: 80%; margin: 0%; margin-left: 13%;">ฟรีค่าส่งสินค้าคืน </p>
+                                <p style=" font-size: 80%; ">(สำหรับสินค้าที่ครอบคลุมค่าขนส่ง)</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col" style="margin-left: 15%;">
+                        <div class="row">
+                            <div class="col-2" style="padding: 0%;">
+                                <svg width="50" height="50" viewBox="0 0 32 32" style="float: left;">
+                                    <use herf="#icon-clock" xlink:href="#icon-clock">
+                                        <path id="icon-clock" fill="Black"
+                                            d="M29 19.7c-.2 0-.3.1-.3.3v1.5c0 .1.2.3.3.3.2 0 .3-.1.3-.3V20c0-.2-.1-.3-.3-.3zM6.1 12.3c.2 0 .3-.1.3-.3v-1.5c0-.1-.2-.3-.3-.3-.2 0-.3.1-.3.3V12c0 .2.1.3.3.3zM8.1 15.7c-.2 0-.3.1-.3.3s.2.3.3.3c.2 0 .3-.2.3-.3 0-.2-.2-.3-.3-.3zM4.8 13H3.3c-.1 0-.3.2-.3.3 0 .2.1.3.3.3h1.5c.1 0 .3-.2.3-.3 0-.2-.1-.3-.3-.3zM4.1 11c-.1-.1-.2-.1-.3 0-.1.1-.1.2 0 .3l.9.9s.1.1.2.1.1 0 .2-.1.1-.2 0-.3l-1-.9zM31.7 18.4h-1.5c-.1 0-.3.2-.3.3 0 .2.1.3.3.3h1.5c.1 0 .3-.2.3-.3 0-.2-.1-.3-.3-.3zM30.4 19.8c-.1-.1-.2-.1-.3 0-.1.1-.1.2-.1.3l.9.9s.1.1.2.1.1 0 .2-.1.1-.2 0-.3l-.9-.9zM19.6 15.3l-1.9.6-2.2-2.2c-.1-.1-.2-.1-.3 0-.1.1-.1.2 0 .3l2.2 2.2s.1.1.2.1h.1l2-.6c.1 0 .2-.2.1-.3 0-.1-.1-.1-.2-.1zM28.9 13h-6.5c-.2-.4-.5-.7-.8-1-.5-.5-1.1-.9-1.8-1.2-1.4-.6-3-.6-4.4-.1-.7.3-1.4.7-1.9 1.3-.3.3-.6.7-.8 1H6.2c-.3 0-.5.2-.5.4v5.2c.1.2.3.4.5.4h6.5c-.2-.3-.3-.6-.4-.9H6.7v-4.3h5.6c-.3.7-.4 1.4-.4 2.2 0 .7.1 1.5.4 2.1.3.7.7 1.4 1.3 1.9.5.5 1.1.9 1.8 1.2.7.3 1.5.5 2.2.5.7 0 1.5-.1 2.1-.4.7-.3 1.4-.7 1.9-1.3.5-.5.9-1.1 1.2-1.8s.5-1.5.5-2.2-.1-1.5-.4-2.1h5.6v.5h-2.3c-.1 0-.2.2-.2.3 0 .2.1.3.2.3h2.3v.7h-2.2c-.1 0-.2.2-.2.3 0 .2.1.3.2.3h2.2v.7h-2.3c-.1 0-.2.2-.2.3 0 .2.1.3.2.3h2.3v.5h-5.6v.1c-.1.3-.3.5-.4.8h6.4c.3 0 .5-.2.5-.4v-5.2c0-.2-.2-.4-.5-.4zm-7.4 3.3h.8c0 .5-.1 1.1-.4 1.5-.2.6-.6 1.1-1 1.5-.5.5-1 .8-1.6 1.1-.5.2-.9.3-1.4.3v-.8c0-.1-.2-.2-.3-.2-.2 0-.3.1-.3.2v.8c-.5 0-1.1-.1-1.5-.4-.6-.2-1.1-.6-1.5-1-.5-.5-.8-1-1.1-1.6-.2-.5-.3-.9-.3-1.4h.8c.1 0 .2-.2.2-.3s-.1-.3-.2-.3h-.8c0-.5.1-1.1.4-1.5.2-.6.6-1.1 1-1.5.5-.5 1-.8 1.6-1.1.5-.2.9-.3 1.4-.3v.8c0 .1.2.2.3.2.2 0 .3-.1.3-.2v-.8c.5 0 1.1.1 1.5.4.6.2 1.1.6 1.5 1 .5.5.8 1 1.1 1.6.2.5.3.9.3 1.4h-.8c-.1 0-.2.2-.2.3s0 .3.2.3zM10.1 15.7c-.2 0-.3.1-.3.3s.1.3.3.3c.2 0 .3-.1.3-.3s-.1-.3-.3-.3z">
+                                        </path>
+                                    </use>
+                                </svg>
+                            </div>
+                            <div class="col" style=" padding: 13px;">
+                                <p style=" font-size: 100%; float: left;">รับประกัน 2 ปี
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <br><br>
+
+
+        <div class="container">
+            <div class="row">
+                &nbsp;&nbsp;&nbsp;&nbsp; <select name="" id="" style="border: 0px ;" onchange="sortFucntion(value);">
+                    <option value="Sort by"> Most popular </option>
+                    <option value="Newest"> Newest </option>
+                    <option value="Highest price"> Highest price </option>
+                    <option value="Lowest price"> Lowest price </option>
+                </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <p type="submit" style="margin-top: 16px;"><u>Filter</u> </p>
+            </div>
+        </div>
+
+
+        <div id="divall" class="container" style="padding: 0px 20px;"><br><br>
+
+
+
+        </div><br><br>
+
+        <div style="background-color: #F4F4F4; width: 100%; height: 200px;">
+            <div class="container" style="width: 900px; height: 76px; padding: 52px 0px; font-size: 18px;">
+                <center>
+                    <p>ออกแบบด้วยความใส่ใจในทุกรายละเอียด นาฬิกาสีเงินของ Daniel Wellington
+                        คำนึงถึงความเรียบหรูดูดีในแบบของตัวเอง
+                        สร้างสรรค์ขึ้นสำหรับทั้งสุภาพบุรุษและสุภาพสตรีโดยมาพร้อมหน้าปัดสีดำหรือสีขาว
+                        เลือกสายแบบต่างๆและทำให้นาฬิกาสี <br>
+                        เงินของคุณเป็นเครื่องประดับเพื่อยกระดับชุดให้ลงตัวมากยิ่งขึ้น</p>
+                </center>
+            </div>
+        </div>
+        <div class="email "
+            style="height: 388px; background-image: url('https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/7ghNPA486DGwULqT2Dkh4m/6f15844daa1af32708c51efc573eebe1/watch_reactivation_footer.jpg');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+
+                    </div>
+                    <div class="col-6" style="height: 388px;">
+                        <div class="row">
+                            <div class="col shadow-lg"
+                                style="padding: 30px; background-color: rgba(255, 255, 255, 0.8); height: 267.6px; margin-top: 30px;">
+                                <h4>รู้ ข่าว ก่อน ใคร</h4>
+                                <p>รับข่าวสาร คำเชิญ และข้อเสนอล่าสุดก่อนใคร…ส่งตรงถึงอีเมลของคุณ</p>
+                                <p>อีเมล</p>
+                                <label style="width: 60%;">
+                                    <input type="email" class="form-control" style="border-radius: 0px;">
+                                </label>
+
+                                <button class="btn btn-secondary btn-lg"
+                                    style="opacity: 0.4; height: 40px;  margin-top: -2px; width: 130px; border-radius: 0px; margin-left: 10px;">
+                                    <p style="margin-top: -2px; font-size:15px;">ลงทะเบียนเลย</p>
+                                </button>
+
+                                <p>คลิกที่นี่เพื่อดูว่า Daniel Wellington นำข้อมูลส่วนบุคคลของ<br> คุณไปประมวลผลอย่างไร.
+                                </p>
+
+
+                            </div>
+                        </div>
+                        <div class="row shadow-lg mb-5"
+                            style="background-color:  rgba(255, 255, 255, 0.8); margin-top: 20px; height: 56px; padding: 10px;">
+                            <div class="col-2"></div>
+                            <div class="col">
+                                <a href="https://www.facebook.com/danielwellingtonofficial" class="social">
+                                    <button type="button" class="btn btn-light btn-circle btn-sm hvr-float"
+                                        style="margin-right: 20px;">
+                                        <svg width="15" height="15" viewBox="0 0 32 32">
+                                            <use herf="#icon-logo-fb" xlink:href="#icon-logo-fb">
+                                                <path id="icon-logo-fb" fill="Black"
+                                                    d="M18.015 31.19H11.35v-15.5H8.095v-5.425h3.255v-3.1C11.35 2.67 13.21.19 18.48.19h4.495v5.27h-2.79c-2.015 0-2.17.775-2.17 2.17v2.635h4.96l-.62 5.425h-4.34v15.5z">
+                                                </path>
+                                            </use>
+                                        </svg>
+                                    </button>
+                                </a>
+                                <a href="https://www.instagram.com/danielwellington/" class="social">
+                                    <button type="button" class="btn btn-light btn-circle btn-sm hvr-float"
+                                        style="margin-right: 20px;">
+                                        <svg width="15" height="15" viewBox="0 0 32 32">
+                                            <use herf="#icon-logo-ig" xlink:href="#icon-logo-ig">
+                                                <path id="icon-logo-ig" fill="Black"
+                                                    d="M16 0H9.412C7.686.157 6.432.314 5.49.784c-1.098.471-2.039.941-2.824 1.882C1.725 3.45 1.254 4.392.784 5.49.313 6.431.157 7.686 0 9.412v13.176c.157 1.726.314 2.98.784 3.922.471 1.098.941 2.039 1.882 2.824.784.941 1.725 1.412 2.824 1.882.941.471 2.196.627 3.922.784h13.176c1.726-.157 2.98-.314 3.922-.784 1.098-.471 2.039-.941 2.824-1.882.941-.784 1.412-1.726 1.882-2.824.471-.941.627-2.196.784-3.922V9.412c-.157-1.726-.314-2.98-.784-3.922-.471-1.098-.941-2.039-1.882-2.824-.784-.941-1.726-1.412-2.824-1.882C25.569.313 24.314.157 22.588 0H16m0 2.824c4.235 0 4.863 0 6.431.157 1.569 0 2.51.314 2.98.471.784.314 1.412.627 1.882 1.255.627.471.941 1.098 1.255 1.882.157.471.471 1.412.471 2.98.157 1.569.157 2.196.157 6.431s0 4.863-.157 6.431c0 1.569-.314 2.51-.471 2.98-.314.784-.627 1.412-1.255 1.882-.471.627-1.098.941-1.882 1.255-.471.157-1.412.471-2.98.471-1.569.157-2.196.157-6.431.157s-4.863 0-6.431-.157c-1.569 0-2.51-.314-2.98-.471-.784-.314-1.412-.627-1.882-1.255-.627-.471-.941-1.098-1.255-1.882-.157-.471-.471-1.412-.471-2.98-.157-1.569-.157-2.196-.157-6.431s0-4.863.157-6.431c0-1.569.314-2.51.471-2.98.314-.784.627-1.412 1.255-1.882.471-.627 1.098-.941 1.882-1.255.471-.157 1.412-.471 2.98-.471 1.569-.157 2.196-.157 6.431-.157m-.157 18.352c-2.824 0-5.176-2.353-5.176-5.333 0-2.824 2.353-5.176 5.176-5.176 2.98 0 5.333 2.353 5.333 5.176a5.29 5.29 0 0 1-5.333 5.333m0-13.49c-4.392 0-8.157 3.765-8.157 8.157 0 4.549 3.765 8.314 8.157 8.314 4.549 0 8.314-3.765 8.314-8.314 0-4.392-3.765-8.157-8.314-8.157m10.51-.313c0 1.098-.784 1.882-1.882 1.882s-1.882-.784-1.882-1.882c0-1.098.784-1.882 1.882-1.882s1.882.784 1.882 1.882">
+                                                </path>
+                                            </use>
+                                        </svg>
+                                    </button>
+                                </a>
+                                <a href="https://www.pinterest.com/itisDW/_created/" class="social">
+                                    <button type="button" class="btn btn-light btn-circle btn-sm hvr-float"
+                                        style="margin-right: 20px;">
+                                        <svg width="15" height="15" viewBox="0 0 32 32">
+                                            <use herf="#icon-logo-pinterest" xlink:href="#icon-logo-pinterest">
+                                                <path id="icon-logo-pinterest" fill="Black"
+                                                    d="M3.449 11.439c0 3.178 1.271 6.037 3.813 6.991.477.159.794 0 .953-.477.159-.318.318-1.112.318-1.43.159-.477.159-.636-.159-.953-.794-.953-1.271-2.065-1.271-3.654 0-4.607 3.495-8.897 9.215-8.897 4.925 0 7.626 3.019 7.626 7.149 0 5.243-2.224 9.691-5.878 9.691-1.907 0-3.336-1.589-2.86-3.495.477-2.383 1.589-4.766 1.589-6.514 0-1.589-.794-2.701-2.542-2.701-1.907 0-3.495 1.907-3.495 4.766 0 1.589.636 2.86.636 2.86s-2.065 8.579-2.542 10.009c-.636 3.019 0 6.673 0 6.991 0 .159.318.318.477.159.159-.318 2.542-3.178 3.336-6.037.159-.794 1.271-5.084 1.271-5.084.636 1.271 2.542 2.224 4.607 2.224 6.037 0 10.009-5.402 10.009-12.551C28.552 5.084 23.945 0 16.795 0 7.898 0 3.449 6.196 3.449 11.439z">
+                                                </path>
+                                            </use>
+                                        </svg>
+                                    </button>
+                                </a>
+
+                                <button type="button" class="btn btn-light btn-circle btn-sm hvr-float"
+                                    style="margin-right: 20px;" class="social">
+                                    <svg width="15" height="15" viewBox="0 0 32 32">
+                                        <use herf="#icon-logo-snabchat" xlink:href="#icon-logo-snabchat">
+                                            <path id="icon-logo-snabchat" fill="Black"
+                                                d="M16.249 30.839h-.498c-1.824 0-3.15-.829-4.311-1.658-.829-.663-1.492-1.161-2.487-1.326H7.627c-.663 0-1.326 0-1.824.166H5.14c-.166 0-.332 0-.497-.332 0-.166 0-.497-.166-.663 0-.663-.166-.995-.497-.995C.996 25.534.167 24.87.001 24.539v-.332c0-.166 0-.332.166-.332 4.643-.663 6.798-5.306 6.798-5.637.332-.497.332-.995.166-1.492-.332-.663-1.326-.995-1.99-1.161-.166-.166-.332-.166-.497-.166-1.326-.497-1.492-1.161-1.326-1.326 0-.497.663-.829 1.161-.829h.497a3.195 3.195 0 0 0 1.658.497c.663 0 .829-.332.829-.332v-.995c-.166-2.155-.332-4.808.332-6.301 2.155-4.643 6.632-4.974 7.793-4.974h.663c1.326 0 5.803.332 7.793 4.974.829 1.492.497 4.145.497 6.301v.166c0 .166-.166.497-.166.829.166 0 .332.332.995.332.332 0 .995-.166 1.492-.497h.994c.497.166.829.497.829.829s-.166.829-1.492 1.326c0 0-.166 0-.332.166-.663.166-1.824.497-2.155 1.161-.166.497 0 .995.166 1.492.166.332 2.155 4.974 6.798 5.637.166 0 .332.166.332.332v.332c-.166.332-.995.995-4.145 1.492-.166 0-.332.332-.497.995 0 .166 0 .497-.166.663 0 .332-.166.332-.332.332h-.829c-.497-.166-.995-.166-1.824-.166h-1.161c-.995.166-1.824.663-2.487 1.326-1.326.829-2.487 1.658-4.311 1.658">
+                                            </path>
+                                        </use>
+                                    </svg>
+                                </button>
+                                <a href="https://twitter.com/itisDW" class="social">
+                                    <button type="button" class="btn btn-light btn-circle btn-sm hvr-float"
+                                        style="margin-right: 20px;">
+                                        <svg width="15" height="15" viewBox="0 0 32 32">
+                                            <use herf="#icon-logo-twitter" xlink:href="#icon-logo-twitter">
+                                                <path id="icon-logo-twitter" fill="Black"
+                                                    d="M28.446 6.227c1.336-.835 2.506-2.172 3.007-3.842-1.336.835-2.84 1.336-4.344 1.671-1.169-1.336-3.007-2.172-4.845-2.172-3.675 0-6.682 3.174-6.682 7.017 0 .668 0 1.169.167 1.671-5.513-.334-10.525-3.174-13.866-7.518-.501 1.169-.835 2.339-.835 3.675 0 2.506 1.169 4.678 3.007 6.014a10.08 10.08 0 0 1-3.174-1.002v.167c0 3.341 2.339 6.348 5.513 7.017-.668.167-1.169.167-1.838.167-.501 0-.835 0-1.169-.167.835 2.84 3.174 5.012 6.181 5.012-2.339 1.838-5.179 3.007-8.353 3.007H-.289c2.84 2.005 6.348 3.174 10.191 3.174 12.363 0 19.045-10.859 19.045-20.381v-.835c1.336-1.002 2.506-2.339 3.341-3.675-1.169.501-2.506.835-3.842 1.002z">
+                                                </path>
+                                            </use>
+                                        </svg>
+                                    </button>
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCY_BDqPMGJaBrxiiazZlEHg" class="social">
+                                    <button type="button" class="btn btn-light btn-circle btn-sm hvr-float"
+                                        style="margin-right: 20px;">
+                                        <svg width="15" height="15" viewBox="0 0 32 32">
+                                            <use herf="#icon-logo-youtube" xlink:href="#icon-logo-youtube">
+                                                <path id="icon-logo-youtube" fill="Black"
+                                                    d="M31.3,8.3c-0.4-1.4-1.4-2.5-2.8-2.9C26,4.7,16,4.7,16,4.7S6,4.7,3.5,5.4C2.1,5.8,1,6.9,0.7,8.3 C0,10.8,0,16,0,16s0,5.2,0.7,7.8c0.4,1.4,1.4,2.5,2.8,2.8C6,27.3,16,27.3,16,27.3s10,0,12.5-0.7c1.4-0.4,2.5-1.5,2.8-2.8 C32,21.2,32,16,32,16S32,10.8,31.3,8.3z M12.7,20.8L12.7,20.8v-9.5l8.4,4.7L12.7,20.8z">
+                                                </path>
+                                            </use>
+                                        </svg>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-2"></div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 40px;">
+            <div class="row" style="height: 272px;">
+                <div class="col">
+                    <p>ร้านค้า</p>
+                    <a href="#" style="color: black;">Shop Instagram</a>
+                    <br>
+                    <a href="#" style="color: black;">นาฬิกาทั้งหมด</a>
+                    <br>
+                    <a href="#" style="color: black;">เครื่องประดับทั้งหมด</a>
+                    <br>
+                    <a href="#" style="color: black;">สายนาฬิกา</a>
+                    <br>
+                    <a href="#" style="color: black;">ร้านค้า</a>
+                    <br>
+                    <a href="#" style="color: black;">แรงบันดาลใจ</a>
+                </div>
+                <div class="col">
+                    <p>ความช่วยเหลือ</p>
+                    <a href="#" style="color: black;">คำถามและคำตอบ</a>
+                    <br>
+                    <a href="#" style="color: black;">ติดต่อเรา</a>
+                    <br>
+                    <a href="#" style="color: black;">วิธีการเปลี่ยนสายนาฬิกา</a>
+                    <br>
+                    <a href="#" style="color: black;">วิธีการวัดขนาดแหวน</a>
+                    <br>
+
+                </div>
+                <div class="col">
+
+
+                    <button type="button" class="btn btn-light btn-circle btn-sm hvr-float"
+                        style="margin-top: -50px; margin-left: 50px; " onclick="topFunction()" id="myBtn">
+                        <svg width="15" height="15" viewBox="0 0 32 32" style="transform: rotate(270deg);">
+                            <use herf="#icon-logo-gotop" xlink:href="#icon-logo-gotop">
+                                <path id="icon-logo-gotop" fill="Black"
+                                    d="M21.563 5.063c-.438-.438-1.188-.438-1.625 0s-.438 1.188 0 1.625l8.188 8.188h-27c-.625 0-1.125.5-1.125 1.125s.5 1.125 1.125 1.125h27l-8.188 8.188c-.438.438-.438 1.188 0 1.625s1.188.438 1.625 0l10.125-10.125a1.17 1.17 0 0 0 0-1.625z">
+                                </path>
+                            </use>
+                        </svg>
+                    </button>
+
+
+                    <p>ข้อมูลเพิ่มเติม</p>
+                    <a href="#" style="color: black;">นโยบายคุ้มครองข้อมูลส่วนบุคคล</a>
+                    <br>
+                    <a href="#" style="color: black;">ข้อกำหนดการใช้งาน</a>
+                    <br>
+                    <a href="#" style="color: black;">นโยบายการคืนสินค้า</a>
+                    <br>
+                    <a href="#" style="color: black;">การตั้งค่าคุกกี้</a>
+                    <br>
+                </div>
+                <div class="col">
+                    <p>เกี่ยวกับเรา</p>
+                    <a href="#" style="color: black;">#DWMOMENTS</a>
+                    <br>
+                    <a href="#" style="color: black;">งาน</a>
+                </div>
+                <div class="col">
+                    <p>Thailand</p>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <img style="margin: 5px;"
+                        srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/2ewe5eMPSEcIqwoU08QIOA/5d89569ef8dfe251d0b795f76e0163d1/visa-2x.png?ecom2=true&width=40&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/2ewe5eMPSEcIqwoU08QIOA/5d89569ef8dfe251d0b795f76e0163d1/visa-2x.png?ecom2=true&width=80&quality=100 2x"
+                        src="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/2ewe5eMPSEcIqwoU08QIOA/5d89569ef8dfe251d0b795f76e0163d1/visa-2x.png?ecom2=true&"
+                        alt
+                        data-srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/2ewe5eMPSEcIqwoU08QIOA/5d89569ef8dfe251d0b795f76e0163d1/visa-2x.png?ecom2=true&width=40&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/2ewe5eMPSEcIqwoU08QIOA/5d89569ef8dfe251d0b795f76e0163d1/visa-2x.png?ecom2=true&width=80&quality=100 2x">
+
+                    <img style="margin: 5px;"
+                        srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/2MIeYuELok46G2wAIU64Ao/dc9ffe7987f1c1654a722a3506199561/mastercard-2x.png?ecom2=true&width=33&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/2MIeYuELok46G2wAIU64Ao/dc9ffe7987f1c1654a722a3506199561/mastercard-2x.png?ecom2=true&width=66&quality=100 2x"
+                        src="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/2MIeYuELok46G2wAIU64Ao/dc9ffe7987f1c1654a722a3506199561/mastercard-2x.png?ecom2=true&"
+                        alt
+                        data-srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/2MIeYuELok46G2wAIU64Ao/dc9ffe7987f1c1654a722a3506199561/mastercard-2x.png?ecom2=true&width=33&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/2MIeYuELok46G2wAIU64Ao/dc9ffe7987f1c1654a722a3506199561/mastercard-2x.png?ecom2=true&width=66&quality=100 2x">
+
+                    <img style="margin: 5px;"
+                        srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/13q571kpXagKaugiUm8sqA/f292e71009a25c91f46b7a888e5cbccb/maestro-2x.png?ecom2=true&width=32&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/13q571kpXagKaugiUm8sqA/f292e71009a25c91f46b7a888e5cbccb/maestro-2x.png?ecom2=true&width=64&quality=100 2x"
+                        src="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/13q571kpXagKaugiUm8sqA/f292e71009a25c91f46b7a888e5cbccb/maestro-2x.png?ecom2=true&"
+                        alt
+                        data-srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/2MIeYuELok46G2wAIU64Ao/dc9ffe7987f1c1654a722a3506199561/mastercard-2x.png?ecom2=true&width=33&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/2MIeYuELok46G2wAIU64Ao/dc9ffe7987f1c1654a722a3506199561/mastercard-2x.png?ecom2=true&width=66&quality=100 2x">
+
+                    <img style="margin: 5px;"
+                        srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/5rkX6puqzKqmYmqCaKw6KC/46319f667e960e4de42326c4cb3d8a3b/jcb-2x.png?ecom2=true&width=34&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/5rkX6puqzKqmYmqCaKw6KC/46319f667e960e4de42326c4cb3d8a3b/jcb-2x.png?ecom2=true&width=68&quality=100 2x"
+                        src="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/5rkX6puqzKqmYmqCaKw6KC/46319f667e960e4de42326c4cb3d8a3b/jcb-2x.png?ecom2=true&"
+                        alt
+                        data-srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/5rkX6puqzKqmYmqCaKw6KC/46319f667e960e4de42326c4cb3d8a3b/jcb-2x.png?ecom2=true&width=34&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/5rkX6puqzKqmYmqCaKw6KC/46319f667e960e4de42326c4cb3d8a3b/jcb-2x.png?ecom2=true&width=68&quality=100 2x">
+
+                    <img style="margin: 5px;"
+                        srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/7rjkl2vvIk46uK2ius6Uiy/bd47cf4a76b302d4a39b1176e853a712/amex-2x.png?ecom2=true&width=27&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/7rjkl2vvIk46uK2ius6Uiy/bd47cf4a76b302d4a39b1176e853a712/amex-2x.png?ecom2=true&width=54&quality=100 2x"
+                        src="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/7rjkl2vvIk46uK2ius6Uiy/bd47cf4a76b302d4a39b1176e853a712/amex-2x.png?ecom2=true&"
+                        alt
+                        data-srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/7rjkl2vvIk46uK2ius6Uiy/bd47cf4a76b302d4a39b1176e853a712/amex-2x.png?ecom2=true&width=27&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/7rjkl2vvIk46uK2ius6Uiy/bd47cf4a76b302d4a39b1176e853a712/amex-2x.png?ecom2=true&width=54&quality=100 2x">
+
+                    <img style="margin: 5px;"
+                        srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/3mlTXT3LWMyU8wKQaGm4YQ/26816edd4b522fb95031e74e2e80755d/discover-2x.png?ecom2=true&width=53&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/3mlTXT3LWMyU8wKQaGm4YQ/26816edd4b522fb95031e74e2e80755d/discover-2x.png?ecom2=true&width=106&quality=100 2x"
+                        src="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/3mlTXT3LWMyU8wKQaGm4YQ/26816edd4b522fb95031e74e2e80755d/discover-2x.png?ecom2=true&"
+                        alt
+                        data-srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/3mlTXT3LWMyU8wKQaGm4YQ/26816edd4b522fb95031e74e2e80755d/discover-2x.png?ecom2=true&width=53&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/3mlTXT3LWMyU8wKQaGm4YQ/26816edd4b522fb95031e74e2e80755d/discover-2x.png?ecom2=true&width=106&quality=100 2x">
+
+                    <img style="margin: 5px;"
+                        srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/3piI2aoGAUOiYQYc0KCw0Y/a9adef44c32c3efe97e34aebbb8feaa5/diners-club-2x.png?ecom2=true&width=74&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/3piI2aoGAUOiYQYc0KCw0Y/a9adef44c32c3efe97e34aebbb8feaa5/diners-club-2x.png?ecom2=true&width=148&quality=100 2x"
+                        src="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/3piI2aoGAUOiYQYc0KCw0Y/a9adef44c32c3efe97e34aebbb8feaa5/diners-club-2x.png?ecom2=true&"
+                        alt
+                        data-srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/3piI2aoGAUOiYQYc0KCw0Y/a9adef44c32c3efe97e34aebbb8feaa5/diners-club-2x.png?ecom2=true&width=74&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/3piI2aoGAUOiYQYc0KCw0Y/a9adef44c32c3efe97e34aebbb8feaa5/diners-club-2x.png?ecom2=true&width=148&quality=100 2x">
+
+                    <img style="margin: 5px;"
+                        srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/4eXbeetlGwMke2MkY4Kkkw/1d422b9855aacdb179c7a42fd815cfa1/paypal-2x.png?ecom2=true&width=64&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/4eXbeetlGwMke2MkY4Kkkw/1d422b9855aacdb179c7a42fd815cfa1/paypal-2x.png?ecom2=true&width=128&quality=100 2x"
+                        src="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/4eXbeetlGwMke2MkY4Kkkw/1d422b9855aacdb179c7a42fd815cfa1/paypal-2x.png?ecom2=true&"
+                        alt
+                        data-srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/4eXbeetlGwMke2MkY4Kkkw/1d422b9855aacdb179c7a42fd815cfa1/paypal-2x.png?ecom2=true&width=64&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/4eXbeetlGwMke2MkY4Kkkw/1d422b9855aacdb179c7a42fd815cfa1/paypal-2x.png?ecom2=true&width=128&quality=100 2x">
+
+                    <img style="margin: 5px;"
+                        srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/1gh3QrmBO9cyzMJ6hTtqek/a86d2462e5fae4912e63d071f38d1bb6/thailand_e-banking.png?ecom2=true&width=40&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/1gh3QrmBO9cyzMJ6hTtqek/a86d2462e5fae4912e63d071f38d1bb6/thailand_e-banking.png?ecom2=true&width=80&quality=100 2x"
+                        src="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/1gh3QrmBO9cyzMJ6hTtqek/a86d2462e5fae4912e63d071f38d1bb6/thailand_e-banking.png?ecom2=true&"
+                        alt
+                        data-srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/1gh3QrmBO9cyzMJ6hTtqek/a86d2462e5fae4912e63d071f38d1bb6/thailand_e-banking.png?ecom2=true&width=40&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/1gh3QrmBO9cyzMJ6hTtqek/a86d2462e5fae4912e63d071f38d1bb6/thailand_e-banking.png?ecom2=true&width=80&quality=100 2x">
+
+                    <img style="margin: 5px;"
+                        srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/3qRPAmY43ZNl19fs9App7r/456f7466ef15c8b3c1f31b47d01b3379/tesco-lotus.png?ecom2=true&width=75.5&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/3qRPAmY43ZNl19fs9App7r/456f7466ef15c8b3c1f31b47d01b3379/tesco-lotus.png?ecom2=true&width=151&quality=100 2x"
+                        src="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/3qRPAmY43ZNl19fs9App7r/456f7466ef15c8b3c1f31b47d01b3379/tesco-lotus.png?ecom2=true&"
+                        alt
+                        data-srcset="https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/3qRPAmY43ZNl19fs9App7r/456f7466ef15c8b3c1f31b47d01b3379/tesco-lotus.png?ecom2=true&width=75.5&quality=100 1x, https://www.danielwellington.com/ecom2-image-bucket/mv3xw5mnbbp0/3qRPAmY43ZNl19fs9App7r/456f7466ef15c8b3c1f31b47d01b3379/tesco-lotus.png?ecom2=true&width=151&quality=100 2x">
+                </div>
+                <div class="col">
+                    <a href="#" style="color: black;">
+                        <h6 style="text-align: center; padding: 15px;">D A N I E L W E L L I N G T O N</h6>
+                    </a>
+                </div>
+                <div class="col">
+
+                    <p style="text-align: center; padding: 15px;">© 2020 Daniel Wellington AB</p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    </div> <!-- ปิด div test ************************************************************************-->
+
+
+    <div class="row" style="margin-top: 15%;">
+        <div class="col">
+            <div style="z-index: 5; position: absolute; text-align: center; margin-top: 230px; margin-left: -570px;">
+                <h1 style="margin-top: -250px;  color: black; margin-left: 740px;">น า ฬิ
+                    ก า สี เ งิ น</h1>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+<script>
+    var body = document.querySelector("body");
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "475px";
+
+        body.style.overflow = "hidden";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        body.style.overflow = "scroll";
+
+    }
+</script>
+
+</html>
